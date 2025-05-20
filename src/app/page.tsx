@@ -15,7 +15,7 @@ export default function Home() {
             <h1 className="text-5xl text-white font-extrabold mb-4">Hi, THERE!</h1>
             <div className="flex items-center mb-6">
               <h1 className="text-[96px] text-white font-extrabold mr-4">
-                I'm
+                I&apos;m
               </h1>
               <div className="text-animation-container">
                 <h2 className="font-bold text-[96px] stroke-text">

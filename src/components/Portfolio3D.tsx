@@ -9,8 +9,6 @@ interface Skill {
 const Portfolio3D = () => {
   useEffect(() => {
     const container = document.querySelector('.portfolio-container');
-    const centerX = container?.getBoundingClientRect().left || 0 + (container?.clientWidth || 0) / 2;
-    const centerY = container?.getBoundingClientRect().top || 0 + (container?.clientHeight || 0) / 2;
     
     const skills: Skill[] = [
       { name: "HTML5", color: "#E44D26" },
