@@ -4,30 +4,79 @@ import { useEffect } from 'react';
 interface Skill {
   name: string;
   color: string;
+  rounded: string;
+  logo: string;
 }
 
 const Portfolio3D = () => {
   useEffect(() => {
     const container = document.querySelector('.portfolio-container');
     
-    const skills: Skill[] = [
-      { name: "HTML5", color: "#E44D26" },
-      { name: "CSS3", color: "#264DE4" },
-      { name: "JS", color: "#F0DB4F" },
-      { name: "React", color: "#61DAFB" },
-      { name: "Node.js", color: "#68A063" },
-      { name: "Python", color: "#3776AB" },
-      { name: "UI/UX", color: "#FF6B6B" },
-      { name: "Git", color: "#F05032" },
-      { name: "SQL", color: "#00758F" },
-      { name: "PHP", color: "#777BB3" }
-    ];
+const skills: Skill[] = [
+    {
+      name: "HTML5",
+      color: "#ffffff",
+      rounded: "20px",
+      logo: "HTML5_logo.png",
+    },
+    {
+      name: "CSS3",
+      color: "#264DE4",
+      rounded: "20px",
+      logo: "logos_css-3.svg",
+    },
+    { name: "JS", color: "#F0DB4F", rounded: "20px", logo: "javascript.svg" },
+    {
+      name: "React",
+      color: "#61DAFB",
+      rounded: "20px",
+      logo: "react.svg",
+    },
+    {
+      name: "Node.js",
+      color: "#68A063",
+      rounded: "20px",
+      logo: "nodejs.svg",
+    },
+    {
+      name: "FastAPI",
+      color: "#3776AB",
+      rounded: "20px",
+      logo: "fastapi.svg",
+    },
+    {
+      name: "UI/UX",
+      color: "#FF6B6B",
+      rounded: "20px",
+      logo: "figma.svg",
+    },
+    {
+      name: "Git",
+      color: "#F05032",
+      rounded: "20px",
+      logo: "git.svg",
+    },
+    {
+      name: "MongoDB",
+      color: "#00758F",
+      rounded: "20px",
+      logo: "mongodb.svg",
+    }
+  ];
     
     skills.forEach((skill, index) => {
       const skillElement = document.createElement('div');
       skillElement.className = 'skill';
-      skillElement.textContent = skill.name;
-      skillElement.style.background = skill.color;
+      const img = document.createElement("img");
+      img.src = skill.logo;
+      img.alt = skill.name;
+      img.style.width = "50px";
+      img.style.height = "50px";
+      skillElement.appendChild(img);
+
+      skillElement.style.background = "#fff";
+      skillElement.style.boxShadow = "0 0 20px rgba(0, 255, 0, 0.5)"
+      skillElement.style.borderRadius = skill.rounded;
       skillElement.style.color = getContrastColor(skill.color);
       if (container) container.appendChild(skillElement);
       
@@ -145,7 +194,7 @@ const Portfolio3D = () => {
     <div className="portfolio-container relative w-full h-full">
       <div 
         className="profile-image"
-        style={{ backgroundImage: "url('/profile.png')" }}
+        style={{ backgroundImage: "url('/image.png')" }}
       ></div>
     </div>
   );
